@@ -125,21 +125,21 @@ export function SkateBoard({
     d.flipY = false;
     d.needsUpdate = true;
     
-      const deckMap = useMemo(() => {
-        const map = deckTexture.clone();
-        map.flipY = false;
-        map.needsUpdate = true;
-        return map;
-      }, [deckTexture]);
+const deckMap = useMemo(() => {
+  const map = deckTexture.clone();
+  map.flipY = false;
+  map.needsUpdate = true;
+  return map;
+}, [deckTexture]);
 
-      const deckMaterial = useMemo(
-        () =>
-          new THREE.MeshStandardMaterial({
-            map: deckMap,
-            roughness: 0.1,
-          }),
-        [deckMap]
-      );
+const deckMaterial = useMemo(
+  () =>
+    new THREE.MeshStandardMaterial({
+      map: deckMap,
+      roughness: 0.1,
+    }),
+  [deckMap],
+);
     //wheel
 
     const wheelMaterial = useMemo(() => 
