@@ -43,7 +43,7 @@ export function ParallaxImage({
             const {x: currentX, y: currentY} = currentPosition.current;
 
             const newX = currentX + (targetX - currentX) * 0.1
-            const newY = currentY + (targetY - currentY) * 0.1
+            const newY = currentX + (targetY - currentY) * 0.1
 
             currentPosition.current = {x: newX, y: newY};
 
