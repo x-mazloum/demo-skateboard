@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Demo Skateboard — Interactive 3D Product Experience
 
-## Getting Started
+An interactive 3D skateboard product website built with **Next.js**, **TypeScript**, **Three.js**, **React Three Fiber**, **Drei**, **GSAP**, **Matter.js**, **Tailwind CSS**, and **Prismic**.
 
-First, run the development server:
+The project demonstrates how React can be used to build rich product experiences that combine 3D models, animation, CMS-driven content, and interactive UI sections.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Live Demo
+
+Add your live demo here if available.
+
+```txt
+https://your-demo-link.com
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** Next.js, React, TypeScript
+- **3D:** Three.js, React Three Fiber, Drei
+- **Animation:** GSAP
+- **Physics:** Matter.js
+- **Styling:** Tailwind CSS
+- **CMS:** Prismic, Slice Machine
+- **Assets:** GLTF model, textures, image/video assets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Main Features
 
-## Learn More
+- 3D skateboard model rendered with React Three Fiber
+- Custom deck and wheel textures
+- Configurable truck and bolt colors
+- Wheel spin animation
+- Product-focused landing page sections
+- Prismic Slice Machine integration
+- Physics-based footer interaction using Matter.js
+- Lazy video block section
+- Reusable UI components for headings, buttons, layout, and animations
 
-To learn more about Next.js, take a look at the following resources:
+## Project Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```txt
+app/
+  layout.tsx
+  globals.css
+  api/
+  slice-simulator/
+slices/
+  Hero/
+  ProductGrid/
+  TeamGrid/
+  TextAndImage/
+  VideoBlock/
+src/components/
+  Bounded.tsx
+  ButtonLink.tsx
+  Footer.tsx
+  FooterPhysics.tsx
+  Header.tsx
+  Heading.tsx
+  SkateBoards.tsx
+  SlideIn.tsx
+public/
+  skateboard.gltf
+  skateboard.bin
+  skateboard/
+  hdr/
+  textures and media assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 3D Implementation
 
-## Deploy on Vercel
+The `SkateBoards.tsx` component loads a GLTF skateboard model and applies custom materials/textures for:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Deck
+- Wheels
+- Grip tape
+- Trucks
+- Bolts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+It uses:
+
+- `useGLTF` for loading the model
+- `useTexture` for loading image textures
+- `MeshStandardMaterial` for realistic materials
+- `useFrame` for continuous wheel animation
+- `GSAP` for animated wheel transitions
+- `useMemo` to optimize material creation
+
+## Interactive Physics
+
+The footer uses **Matter.js** to create a physics-based interaction where skateboard images behave like physical objects. The implementation includes:
+
+- Physics engine setup
+- Canvas rendering
+- Gravity
+- Collision boundaries
+- Mouse dragging
+- Responsive resizing
+- Reduced-motion handling
+- Cleanup logic for performance
+
+## CMS / Content Structure
+
+The project uses Prismic slices for a modular content-driven page structure:
+
+- Hero
+- Product Grid
+- Team Grid
+- Text and Image
+- Video Block
+
+This shows how the same frontend can support editable marketing/product content through a headless CMS.
+
+## What I Learned
+
+This project helped me strengthen:
+
+- Loading and rendering GLTF models in React
+- Applying textures and materials in Three.js
+- Building animated 3D product experiences
+- Integrating Prismic slices into a Next.js app
+- Combining animation, physics, and responsive UI
+- Organizing creative frontend projects with reusable components
+
+## Future Improvements
+
+- Add screenshots and video demo to the README
+- Improve performance notes for 3D assets
+- Add loading and fallback states for 3D content
+- Add more detailed Prismic setup instructions
+- Optimize assets for production
+- Add accessibility notes for animations and reduced motion
+
+## Running Locally
+
+```bash
+git clone https://github.com/x-mazloum/demo-skateboard.git
+cd demo-skateboard
+npm install
+npm run dev
+```
+
+For Prismic/Slice Machine:
+
+```bash
+npm run slicemachine
+```
+
+## Project Status
+
+This is a portfolio project built to demonstrate interactive frontend development, React Three Fiber, Three.js, animation, and CMS-driven product pages.
