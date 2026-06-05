@@ -9,7 +9,7 @@ The project demonstrates how React can be used to build rich product experiences
 https://demo-skateboard.vercel.app
 
 ```txt
-https://your-demo-link.com
+https://demo-skateboard.vercel.app
 ```
 
 ## Tech Stack
