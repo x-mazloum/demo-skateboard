@@ -6,7 +6,7 @@ The project demonstrates how React can be used to build rich product experiences
 
 ## Live Demo
 
-Add your live demo here if available.
+https://demo-skateboard.vercel.app
 
 ```txt
 https://your-demo-link.com
